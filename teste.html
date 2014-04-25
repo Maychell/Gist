@@ -1,0 +1,40 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1 id="value">0</h1>
+		<button id="increment">Incrementar</button>
+		<button id="decrement">Decrementar</button>
+	</body>
+	<script type="text/javascript">
+
+		var count = function (){
+			var value = 0;
+
+			var update = function () {
+				document.getElementById('value').innerHTML = value;
+			}
+
+			var increment = function () {
+				++value;
+				update();
+			}
+
+			var decrement = function () {
+				--value;
+				update();
+			}
+
+			var init = function () {
+				document.getElementById('increment').onclick = increment;
+				document.getElementById('decrement').onclick = decrement;
+			}
+
+			return { init: init }
+
+		};
+
+		count().init();
+
+	</script>
+</html>
